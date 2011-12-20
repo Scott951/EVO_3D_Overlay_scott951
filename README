@@ -1,0 +1,26 @@
+overlay for porting MIUI to the HTC Evo 3D
+original overlay by scott951
+
+framework.jar instructions:
+Decompile classes.dex from original MIUI framework.jar
+Overwrite two files from overlay in respective directory
+Recompile classes.dex and insert in MIUI framework.jar
+
+framework-res.apk instructions:
+Replace eri.xml in MIUI framework-res.apk/res/xml/ with file from overlay (FOR CDMA)
+Add Lines to arrays.xml (stronger Haptic feedback)
+
+In boot.img-ramdisk/init.shooter.rc
+Add to end:
+service fmradio /system/bin/fmradioserver
+    group bluetooth net_bt_admin
+
+Added 
+Soundrecorder.apk /system/app (for qHD devices)
+Torch.apk /system/app (for qHD devices)
+
+Decompile Launcher2.apk
+add lines to dimens.xml
+add some resized images
+
+
